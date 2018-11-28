@@ -8,7 +8,7 @@ pipeline {
     environment {
         CI = 'true'
         // You need to specify 4 required environment variables first, they are going to be used for the following IBM Cloud DevOps steps
-        IBM_CLOUD_DEVOPS_CREDS = credentials('BM_CRED')
+        IBM_CLOUD_DEVOPS_CREDS = credentials('97afa093-3137-4335-8b08-705a272b23aa')
         IBM_CLOUD_DEVOPS_ORG = 'CI/CD'
         IBM_CLOUD_DEVOPS_SPACE= 'dev'
         //IBM_CLOUD_DEVOPS_APP_NAME = 'Weather-V1'
