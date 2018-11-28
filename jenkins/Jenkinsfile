@@ -23,10 +23,11 @@ pipeline {
             }
             post {
                 success {
-                    publishBuildRecord gitBranch: "${GIT_BRANCH}", gitCommit: "${GIT_COMMIT}", gitRepo: "${GIT_REPO}", result:"SUCCESS"
+                    notifyOTC stageName: "Build", status: "SUCCESS"
+                    sendDeployableMessage status: "SUCCESS"
                 }
                 failure {
-                    publishBuildRecord gitBranch: "${GIT_BRANCH}", gitCommit: "${GIT_COMMIT}", gitRepo: "${GIT_REPO}", result:"FAIL"
+                    notifyOTC stageName: "Build", status: "FAILURE"
                 }
             }
         }
